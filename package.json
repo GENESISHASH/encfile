@@ -1,0 +1,15 @@
+{
+  "name": "encfile",
+  "description": "for personal use",
+  "version": "0.0.1",
+  "main": "./build/module.js",
+  "author": "taky@taky.com",
+  "repository": "tosadvisor/encfile",
+  "keywords": [
+    "taky",
+    "encfile"
+  ],
+  "dependencies": {
+    "wegweg": "^0.14.0"
+  }
+}
