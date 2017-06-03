@@ -21,13 +21,13 @@ l = (do =>
     ]
   }))
   for x in ['info','warn','error']
-    @[x] = winston[x] if !process.env.SILENCE
+    @[x] = winston[x] if !process.env.ENCFILE_SILENCE
   @
 )
 
 module.exports = encfile = {
   std: (=>
-    help = (=>
+    help = ((code) =>
       log """
         Usage: ./ <command> <options>
           Command: encrypt file (e):
@@ -35,9 +35,58 @@ module.exports = encfile = {
           Command: decrypt file (d):
             ./ d --infile <filename> --outfile <filename> --key <secret> [--meta]
       """
-      exit 0
+      exit(code ? 0)
     )
+
     help() if _.arg('help')
+
+    a = process.argv
+
+    i = 0
+    cmd = null
+
+    for item in a
+      if item is 'e'
+        cmd = 'e'
+        break
+      if item is 'd'
+        cmd = 'd'
+        break
+      ++ i
+
+    if !cmd
+      l.error 'You must provide a command'
+      help(1)
+
+    required = [
+      'infile'
+      'outfile'
+      'key'
+    ]
+
+    for x in required
+      if !_.arg(x)
+        err = "`--#{x}` required"
+        l.error e
+        exit 1
+
+    if cmd is 'e'
+      await @encrypt _.arg('infile'), _.arg('outfile'), _.arg('key'), defer e,r
+      if e
+        l.err e
+        exit 1
+      exit 0
+
+    if cmd is 'd'
+      await @decrypt _.arg('infile'), _.arg('outfile'), _.arg('key'), defer e,r
+      if e
+        l.err e
+        exit 1
+      if _.arg('metadata')
+        l.info "File metadata", r
+      exit 0
+
+    return help(0)
   )
 
   encrypt: ((infile,outfile,key,cb) =>
@@ -123,7 +172,7 @@ module.exports = encfile = {
 
     l.info "File written to disk in #{new Date - start}ms"
 
-    return cb null, outfile
+    return cb null, json._
   )
 }
 
@@ -157,4 +206,6 @@ if !module.parent
 
   else
     encfile.std()
+else
+  process.env.ENCFILE_SILENCE = 1
 
