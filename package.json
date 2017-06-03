@@ -6,7 +6,7 @@
   "author": "taky@taky.com",
   "repository": "tosadvisor/encfile",
   "bin": {
-    "encfile": "./bin/bin"
+    "encfile": "./bin/encfile"
   },
   "keywords": [
     "taky",
