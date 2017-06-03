@@ -5,6 +5,9 @@
   "main": "./build/module.js",
   "author": "taky@taky.com",
   "repository": "tosadvisor/encfile",
+  "bin": {
+    "encfile": "./bin/bin"
+  },
   "keywords": [
     "taky",
     "encfile"

@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+process.env.ENCFILE_STD = 1
+require(__dirname + '/../build/module.js')
+

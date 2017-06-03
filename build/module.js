@@ -91,7 +91,7 @@
       ___iced_passed_deferral = iced.findDeferral(arguments);
       help = ((function(_this) {
         return function(code) {
-          log("Usage: <command> <options>\nCommand: encrypt file (e):\n  ./ e --infile <filename> --outfile <filename> --key <secret>\nCommand: decrypt file (d):\n  ./ d --infile <filename> --outfile <filename> --key <secret>");
+          log("Usage: <command> <options>\n\nCommand: encrypt file (e):\n  ./ e --infile <filename> --outfile <filename> --key <secret>\nCommand: decrypt file (d):\n  ./ d --infile <filename> --outfile <filename> --key <secret>");
           return exit(code != null ? code : 0);
         };
       })(this));
@@ -141,7 +141,7 @@
                     return r = arguments[1];
                   };
                 })(),
-                lineno: 73
+                lineno: 74
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -171,7 +171,7 @@
                       return r = arguments[1];
                     };
                   })(),
-                  lineno: 80
+                  lineno: 81
                 }));
                 __iced_deferrals._fulfill();
               })(function() {
@@ -214,7 +214,7 @@
                 return data = arguments[1];
               };
             })(),
-            lineno: 99
+            lineno: 100
           }));
           __iced_deferrals._fulfill();
         });
@@ -248,7 +248,7 @@
                   return json = arguments[1];
                 };
               })(),
-              lineno: 120
+              lineno: 121
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -268,7 +268,7 @@
                     return e = arguments[0];
                   };
                 })(),
-                lineno: 128
+                lineno: 129
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -304,7 +304,7 @@
                 return json = arguments[1];
               };
             })(),
-            lineno: 144
+            lineno: 145
           }));
           __iced_deferrals._fulfill();
         });
@@ -327,7 +327,7 @@
                   return json = arguments[1];
                 };
               })(),
-              lineno: 150
+              lineno: 151
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -357,7 +357,7 @@
                     return e = arguments[0];
                   };
                 })(),
-                lineno: 167
+                lineno: 168
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -403,7 +403,7 @@
                   return r = arguments[1];
                 };
               })(),
-              lineno: 193
+              lineno: 194
             }));
             __iced_deferrals._fulfill();
           })(function() {
@@ -421,7 +421,7 @@
                     return r = arguments[1];
                   };
                 })(),
-                lineno: 196
+                lineno: 197
               }));
               __iced_deferrals._fulfill();
             })(function() {
@@ -439,7 +439,7 @@
                       return r = arguments[1];
                     };
                   })(),
-                  lineno: 200
+                  lineno: 201
                 }));
                 __iced_deferrals._fulfill();
               })(function() {
@@ -457,7 +457,11 @@
       });
     })(this)(__iced_k);
   } else {
-        process.env.ENCFILE_SILENCE = 1;
+        if (process.env.ENCFILE_STD) {
+      encfile.std();
+    } else {
+      process.env.ENCFILE_SILENCE = 1;
+    }
     __iced_k();;
   }
 

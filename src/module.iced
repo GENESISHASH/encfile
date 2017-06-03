@@ -207,6 +207,9 @@ if !module.parent
   else
     encfile.std()
 else
-  # silence winston on module require
-  process.env.ENCFILE_SILENCE = 1
+  if process.env.ENCFILE_STD
+    encfile.std()
+  else
+    # silence winston on require
+    process.env.ENCFILE_SILENCE = 1
 
