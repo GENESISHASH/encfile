@@ -26,7 +26,7 @@ l = (do =>
 )
 
 module.exports = encfile = {
-  std: (=>
+  std: (->
     help = ((code) =>
       log """
         Usage: ./ <command> <options>
@@ -67,7 +67,7 @@ module.exports = encfile = {
     for x in required
       if !_.arg(x)
         err = "`--#{x}` required"
-        l.error e
+        l.error err
         exit 1
 
     if cmd is 'e'
@@ -82,13 +82,13 @@ module.exports = encfile = {
       if e
         l.err e
         exit 1
-      l.info "File metadata:", JSON.stringify(r,null,2)
+      l.info "File metadata", JSON.stringify(r)
       exit 0
 
     return help(0)
   )
 
-  encrypt: ((infile,outfile,key,cb) =>
+  encrypt: ((infile,outfile,key,cb) ->
     start = new Date
 
     infile = _.resolve infile
@@ -136,7 +136,7 @@ module.exports = encfile = {
     return cb null, outfile
   )
 
-  decrypt: ((infile,outfile,key,cb) =>
+  decrypt: ((infile,outfile,key,cb) ->
     if !_.exists(infile)
       return cb new Error "#{infile} does not exist"
 
@@ -206,5 +206,6 @@ if !module.parent
   else
     encfile.std()
 else
+  # silence winston on module require
   process.env.ENCFILE_SILENCE = 1
 
