@@ -146,7 +146,7 @@
               __iced_deferrals._fulfill();
             })(function() {
               if (e) {
-                l.err(e);
+                l.error(e);
                 exit(1);
               }
               return __iced_k(exit(0));
@@ -176,7 +176,7 @@
                 __iced_deferrals._fulfill();
               })(function() {
                 if (e) {
-                  l.err(e);
+                  l.error(e);
                   exit(1);
                 }
                 l.info("File metadata", JSON.stringify(r));

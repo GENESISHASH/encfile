@@ -74,14 +74,14 @@ module.exports = encfile = {
     if cmd is 'e'
       await @encrypt _.arg('infile'), _.arg('outfile'), _.arg('key'), defer e,r
       if e
-        l.err e
+        l.error e
         exit 1
       exit 0
 
     if cmd is 'd'
       await @decrypt _.arg('infile'), _.arg('outfile'), _.arg('key'), defer e,r
       if e
-        l.err e
+        l.error e
         exit 1
       l.info "File metadata", JSON.stringify(r)
       exit 0
