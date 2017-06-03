@@ -129,29 +129,32 @@ module.exports = encfile = {
 
 ##
 if !module.parent
+  if _.arg('test')
+    arr = [
+      file_orig = __dirname + '/../test/image.png'
+      file_encd = __dirname + '/../test/image.enc'
+      file_copy = __dirname + '/../test/image-copy.png'
+      file_fail = __dirname + '/../test/image-fail.png'
+    ]
 
-  arr = [
-    file_orig = __dirname + '/../test/image.png'
-    file_encd = __dirname + '/../test/image.enc'
-    file_copy = __dirname + '/../test/image-copy.png'
-    file_fail = __dirname + '/../test/image-fail.png'
-  ]
+    do (=>
+      x = _.clone(arr)
+      x.shift()
+      (if _.exists(f) then rm f for f in x)
+    )
 
-  do (=>
-    x = _.clone(arr)
-    x.shift()
-    (if _.exists(f) then rm f for f in x)
-  )
+    await encfile.encrypt file_orig, file_encd, 'secret', defer e,r
+    if e then throw e
 
-  await encfile.encrypt file_orig, file_encd, 'secret', defer e,r
-  if e then throw e
+    await encfile.decrypt file_encd, file_copy, 'secret', defer e,r
+    if e then throw e
 
-  await encfile.decrypt file_encd, file_copy, 'secret', defer e,r
-  if e then throw e
+    # should fail
+    await encfile.decrypt file_encd, file_fail, 'different', defer e,r
+    if !e then throw new Error 'This should have failed'
 
-  # should fail
-  await encfile.decrypt file_encd, file_fail, 'different', defer e,r
-  if !e then throw new Error 'This should have failed'
+    log "Finished"; exit 0
 
-  log "Finished"; exit 0
+  else
+    encfile.std()
 
