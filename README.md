@@ -54,6 +54,14 @@ log "Finished"; exit 0
 # shell
 
 ``` shell
+Usage: ./ <command> <options>
+	Command: encrypt file (e):
+		./ e --infile <filename> --outfile <filename> --key <secret>
+	Command: decrypt file (d):
+		./ d --infile <filename> --outfile <filename> --key <secret> [--meta]
+```
+
+``` shell
 encfile e --infile file.zip --outfile file.enc --key secret
 encfile d --infile file.zip.enc --outfile file.zip.enc --key secret
 ```
