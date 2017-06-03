@@ -33,7 +33,7 @@ module.exports = encfile = {
           Command: encrypt file (e):
             ./ e --infile <filename> --outfile <filename> --key <secret>
           Command: decrypt file (d):
-            ./ d --infile <filename> --outfile <filename> --key <secret> [--meta]
+            ./ d --infile <filename> --outfile <filename> --key <secret>
       """
       exit(code ? 0)
     )
@@ -46,16 +46,16 @@ module.exports = encfile = {
     cmd = null
 
     for item in a
-      if item is 'e'
+      if item in ['e','encrypt']
         cmd = 'e'
         break
-      if item is 'd'
+      if item in ['d','decrypt']
         cmd = 'd'
         break
       ++ i
 
     if !cmd
-      l.error 'You must provide a command'
+      l.error 'No valid command specified'
       help(1)
 
     required = [
@@ -82,8 +82,7 @@ module.exports = encfile = {
       if e
         l.err e
         exit 1
-      if _.arg('metadata')
-        l.info "File metadata", r
+      l.info "File metadata:", JSON.stringify(r,null,2)
       exit 0
 
     return help(0)
