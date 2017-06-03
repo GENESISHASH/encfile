@@ -55,6 +55,7 @@ log "Finished"; exit 0
 
 ``` shell
 Usage: <command> <options>
+
 Command: encrypt file (e):
   ./ e --infile <filename> --outfile <filename> --key <secret>
 Command: decrypt file (d):
