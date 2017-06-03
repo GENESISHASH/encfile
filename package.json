@@ -10,6 +10,7 @@
     "encfile"
   ],
   "dependencies": {
-    "wegweg": "^0.14.0"
+    "wegweg": "^0.14.0",
+    "winston": "^2.3.1"
   }
 }
