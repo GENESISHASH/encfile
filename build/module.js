@@ -91,7 +91,7 @@
       ___iced_passed_deferral = iced.findDeferral(arguments);
       help = ((function(_this) {
         return function(code) {
-          log("Usage: ./ <command> <options>\n  Command: encrypt file (e):\n    ./ e --infile <filename> --outfile <filename> --key <secret>\n  Command: decrypt file (d):\n    ./ d --infile <filename> --outfile <filename> --key <secret>");
+          log("Usage: <command> <options>\nCommand: encrypt file (e):\n  ./ e --infile <filename> --outfile <filename> --key <secret>\nCommand: decrypt file (d):\n  ./ d --infile <filename> --outfile <filename> --key <secret>");
           return exit(code != null ? code : 0);
         };
       })(this));

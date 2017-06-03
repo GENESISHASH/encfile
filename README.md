@@ -54,11 +54,11 @@ log "Finished"; exit 0
 # shell
 
 ``` shell
-Usage: ./ <command> <options>
-  Command: encrypt file (e):
-    ./ e --infile <filename> --outfile <filename> --key <secret>
-  Command: decrypt file (d):
-    ./ d --infile <filename> --outfile <filename> --key <secret> [--meta]
+Usage: <command> <options>
+Command: encrypt file (e):
+  ./ e --infile <filename> --outfile <filename> --key <secret>
+Command: decrypt file (d):
+  ./ d --infile <filename> --outfile <filename> --key <secret>
 ```
 
 ``` shell

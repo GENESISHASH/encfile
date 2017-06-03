@@ -29,11 +29,11 @@ module.exports = encfile = {
   std: (->
     help = ((code) =>
       log """
-        Usage: ./ <command> <options>
-          Command: encrypt file (e):
-            ./ e --infile <filename> --outfile <filename> --key <secret>
-          Command: decrypt file (d):
-            ./ d --infile <filename> --outfile <filename> --key <secret>
+        Usage: <command> <options>
+        Command: encrypt file (e):
+          ./ e --infile <filename> --outfile <filename> --key <secret>
+        Command: decrypt file (d):
+          ./ d --infile <filename> --outfile <filename> --key <secret>
       """
       exit(code ? 0)
     )
