@@ -132,7 +132,7 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                filename: "/home/taky/www/encfile/src/module.iced"
               });
               _this.encrypt(_.arg('infile'), _.arg('outfile'), _.arg('key'), __iced_deferrals.defer({
                 assign_fn: (function() {
@@ -162,7 +162,7 @@
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
                   parent: ___iced_passed_deferral,
-                  filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                  filename: "/home/taky/www/encfile/src/module.iced"
                 });
                 _this.decrypt(_.arg('infile'), _.arg('outfile'), _.arg('key'), __iced_deferrals.defer({
                   assign_fn: (function() {
@@ -205,7 +205,7 @@
         return (function(__iced_k) {
           __iced_deferrals = new iced.Deferrals(__iced_k, {
             parent: ___iced_passed_deferral,
-            filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+            filename: "/home/taky/www/encfile/src/module.iced"
           });
           fs.readFile(infile, 'base64', __iced_deferrals.defer({
             assign_fn: (function() {
@@ -239,7 +239,7 @@
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral,
-              filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+              filename: "/home/taky/www/encfile/src/module.iced"
             });
             zlib.gzip(json, __iced_deferrals.defer({
               assign_fn: (function() {
@@ -260,7 +260,7 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                filename: "/home/taky/www/encfile/src/module.iced"
               });
               fs.writeFile(outfile, json, __iced_deferrals.defer({
                 assign_fn: (function() {
@@ -295,7 +295,7 @@
         return (function(__iced_k) {
           __iced_deferrals = new iced.Deferrals(__iced_k, {
             parent: ___iced_passed_deferral,
-            filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+            filename: "/home/taky/www/encfile/src/module.iced"
           });
           fs.readFile(infile, __iced_deferrals.defer({
             assign_fn: (function() {
@@ -318,7 +318,7 @@
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
               parent: ___iced_passed_deferral,
-              filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+              filename: "/home/taky/www/encfile/src/module.iced"
             });
             zlib.gunzip(json, __iced_deferrals.defer({
               assign_fn: (function() {
@@ -349,7 +349,7 @@
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
                 parent: ___iced_passed_deferral,
-                filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                filename: "/home/taky/www/encfile/src/module.iced"
               });
               fs.writeFile(outfile, json.b64, 'base64', __iced_deferrals.defer({
                 assign_fn: (function() {
@@ -394,7 +394,7 @@
           })();
           (function(__iced_k) {
             __iced_deferrals = new iced.Deferrals(__iced_k, {
-              filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+              filename: "/home/taky/www/encfile/src/module.iced"
             });
             encfile.encrypt(file_orig, file_encd, 'secret', __iced_deferrals.defer({
               assign_fn: (function() {
@@ -412,7 +412,7 @@
             }
             (function(__iced_k) {
               __iced_deferrals = new iced.Deferrals(__iced_k, {
-                filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                filename: "/home/taky/www/encfile/src/module.iced"
               });
               encfile.decrypt(file_encd, file_copy, 'secret', __iced_deferrals.defer({
                 assign_fn: (function() {
@@ -430,7 +430,7 @@
               }
               (function(__iced_k) {
                 __iced_deferrals = new iced.Deferrals(__iced_k, {
-                  filename: "/Users/douglaslauer/www/encfile/src/module.iced"
+                  filename: "/home/taky/www/encfile/src/module.iced"
                 });
                 encfile.decrypt(file_encd, file_fail, 'different', __iced_deferrals.defer({
                   assign_fn: (function() {
