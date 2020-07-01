@@ -1,7 +1,7 @@
 {
   "name": "encfile",
   "description": "for personal use",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./build/module.js",
   "author": "taky@taky.com",
   "repository": "tosadvisor/encfile",
