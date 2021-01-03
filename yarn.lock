@@ -1640,10 +1640,10 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
-wegweg@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/wegweg/-/wegweg-0.20.0.tgz#b34ac87b0f192f97fc9f386a39e4a7045b76c17c"
-  integrity sha512-x91Tczq1jA/jDG6WSeBBVVjwzQ/+U7DnBuFBLc8aUJJv/boAvRlF31kkct2VpewRGfAyQIu4SZYOyDjra0G/Tg==
+wegweg@^0.21.0:
+  version "0.21.0"
+  resolved "https://registry.yarnpkg.com/wegweg/-/wegweg-0.21.0.tgz#119dd1fc334a4f99e183730c3f74ed4141a912f7"
+  integrity sha512-3aU8bAU+jBoD47G1Q7f5P14oZ1q5vSz0GSGViFyKp9Tn+ft2Z28jDxwbTgZyjZN12vV0eXJrRlsVkQGmlvcxTA==
   dependencies:
     async "^1.5.2"
     body-parser "^1.15.1"
