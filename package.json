@@ -13,7 +13,7 @@
     "encfile"
   ],
   "dependencies": {
-    "wegweg": "^0.19.0",
+    "wegweg": "^0.20.0",
     "winston": "^2.3.1"
   }
 }
